@@ -132,3 +132,16 @@ __iterative__
 (define (report-prime elapsed-time)
   (display " *** ")
   (display elapsed-time))
+ 
+ *Exercise 1.33* "Recursive"
+  
+  #lang sicp
+(define (product term a next b)
+    (if
+     (> a b) 1
+     (* (term a)
+        (product term (next a) next b))))
+
+(define (identity x) x)
+(define (factorial n) (product identity 1 inc n))
+
